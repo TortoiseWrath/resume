@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<title>Sean Gillen</title>
+		<meta charset="UTF-8">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$("a[data-email]").each(function() { //for every email link (with data-email attribute)
+					user = 'mail'; //default value
+					domain = '@seangillen.com';
+					data = $(this).attr('data-email');
+					subject = '';
+					if(!!$.trim(data)) user=data; //if data-email attribute non-empty, use as user part
+					if(user.charAt(0)=='+') user='mail'+user;
+					if(!$.trim($(this).text())) $(this).html(user+domain); //make text email address if still blank
+					$(this).attr('href','mailto:'+user+domain+'?subject='+subject); //set href
+				});
+			});
+		</script>
+		<style type="text/css">
+			@font-face {
+				font-family: "Linux Libertine O";
+				src: url("LinLibertine_R.otf") format("opentype");
+			}
+
+			@font-face {
+				font-family: "Linux Libertine O";
+				font-weight: 600;
+				src: url("LinLibertine_RZ.otf") format("opentype");
+			}
+
+			@font-face {
+				font-family: "Linux Libertine O";
+				font-weight: 600;
+				font-style: italic;
+				src: url("LinLibertine_RZI.otf") format("opentype");
+			}
+
+			@font-face {
+				font-family: "Linux Libertine O";
+				font-weight: 700;
+				src: url("LinLibertine_RB.otf") format("opentype");
+			}
+
+			@font-face {
+				font-family: "Linux Libertine O";
+				font-weight: 700;
+				font-style: italic;
+				src: url("LinLibertine_RBI.otf") format("opentype");
+			}
+
+			@font-face {
+				font-family: "Linux Libertine O";
+				font-style: italic;
+				src: url("LinLibertine_RI.otf") format("opentype");
+			}
+
+			@font-face {
+				font-family: "Segoe";
+				src: url("segoeui.ttf") format("truetype");
+			}
+
+			@font-face {
+				font-family: "Segoe";
+				font-weight: 600;
+				src: url("seguisb.ttf") format("truetype");
+			}
+
+			@font-face {
+				font-family: "Segoe";
+				font-weight: 600;
+				font-style: italic;
+				src: url("seguisbi.ttf") format("truetype");
+			}
+
+			@font-face {
+				font-family: "Segoe";
+				font-weight: 700;
+				src: url("segoeuib.ttf") format("truetype");
+			}
+
+			@font-face {
+				font-family: "Segoe";
+				font-weight: 700;
+				font-style: italic;
+				src: url("segoeuiz.ttf") format("truetype");
+			}
+
+			@font-face {
+				font-family: "Segoe";
+				font-style: italic;
+				src: url("segoeuii.ttf") format("truetype");
+			}
+
+			@font-face {
+				font-family: "Leelawadee";
+				font-weight: 400;
+				src: url("LeelawUI.ttf") format("truetype");
+			}
+
+			@font-face {
+				font-family: "Leelawadee";
+				font-weight: 400;
+				src: url("LeelawUI.ttf") format("truetype");
+			}
+
+			body {
+				text-align: center;
+				background-color: whitesmoke;
+			}
+			.light .dark-only, .dark .light-only {
+				display: none;
+			}
+			article {
+				display: inline-block;
+				width: 7in;
+				height: 9.8in;
+				text-align: left;
+				background-color: white;
+				border-radius: 1em;
+				margin: 1em;
+				padding: 0.6in 0.75in;
+				font-size: 12pt;
+				font-family: 'Segoe', 'Segoe UI', sans-serif;
+			}
+			h1, h2 {
+				text-align: center;
+				font-weight: 900;
+				text-transform: uppercase;
+				font-feature-settings: "titl";
+				white-space: nowrap;
+				margin-bottom: 0.2em;
+			}
+			h1 {
+				margin: 0;
+				font-size: 28pt;
+			}
+			h2 {
+				font-size: 18pt;
+				font-family: 'Linux Libertine O', serif;
+			}
+			.org {
+				font-weight: 600;
+			}
+			.project {
+				font-weight: 700;
+			}
+			img {
+				vertical-align: middle;
+			}
+			header {
+				display: grid;
+			}
+			header>h1 {
+				grid-area: 1 / 1 / 1 / 1;
+				display: block;
+				text-align: center;
+				margin: 0;
+			}
+			header>address {
+				grid-area: 1 / 2 / 1 / 2;
+				display: block;
+				text-align: center;
+				font-style: normal;
+				white-space: nowrap;
+				margin: 0;
+			}
+			header>address>* {
+				display: block;
+			}
+			.flex {
+				display: flex;
+				justify-content: space-between;
+			}
+			ul.flex {
+				flex-wrap: wrap;
+				list-style-type: none;
+				padding: 0;
+				margin: 0;
+				justify-content: flex-start;
+			}
+			ul.flex:not(.nocomma)>li:not(:last-of-type):after {
+				content: ',';
+			}
+			ul.flex>li {
+				padding-left: 0.5em;
+			}
+			ul.flex.nocomma>li:not(:last-of-type) {
+				padding-right: 3em;
+			}
+			p {
+				margin: 0;
+			}
+			a:not(:hover) {
+				text-decoration: none;
+				color: black;
+			}
+			time {
+				font-variant: small-caps;
+			}
+			ul {
+				margin: 0;
+				padding-left: 1em;
+				margin-bottom: 1em;
+			}
+			.tech, .project, h1, h2, .project a {
+				color: #0f243e;
+			}
+			@media print {
+				.dark-only {
+					display: none;
+				}
+				.light-only {
+					display: inline-block;
+				}
+				article {
+					font-family: 'Linux Libertine O', serif;
+				}
+				h2 {
+					font-family: 'Segoe', 'Segoe UI', sans-serif;
+				}
+				body, html {
+					background-color: white;
+					margin: 0;
+					padding: 0;
+				}
+				article {
+					margin: 0;
+					padding: 0;
+				}
+			}
+		</style>
+	</head>
+	<body class="light">
+		<article>
+			<header>
+				<h1 style="font-family: 'Leelawadee', 'Segoe UI', 'Segoe', sans-serif;"><span style="font-weight: 400; margin-right: 0.15em; color: #17365d;">Sean</span>Gillen</h1>
+				<address>
+					<a href="tel:1-509-779-2336">(509)&nbsp;779&ndash;2336</a>
+					<a data-email></a>
+					<a href="https://github.com/TortoiseWrath"><img class="light-only" src="GitHub-Mark-32px.png" alt="GitHub: " style="height: 1em;"><img class="dark-only" src="GitHub-Mark-Light-32px.png" alt="GitHub: " style="height: 1em;"> github.com/TortoiseWrath</a>
+				</address>
+			</header>
+			<section>
+				<h2>Education</h2>
+				<p><span class="org">The University of Alabama</span>, Tuscaloosa, AL</p>
+				<div class="flex">
+					<p><span class="project">Bachelor of Science in Computer Science</span></p>
+					<p><time datetime="2020-05-02">May 2020</time></p>
+				</div>
+				<div class="flex nocomma" style="font-style: italic;">
+					<p>Minor: Mathematics</p>
+					<p>Honors College</p>
+					<p>GPA: 3.7/4.0</p>
+				</div>
+				<ul>
+					<li>Member of Association for Computing Machinery student chapter</li>
+					<li>Head of competitive programming club (<time datetime="2019-01-17">Jan 2019</time> &ndash; present)</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Work Experience</h2>
+				<div class="flex">
+					<p><span class="project">IT Contractor</span></p>
+					<p><span class="org">Forget Me Not Animal Shelter</span>, Republic, WA</p>
+					<p><time datetime="2017-09-20">Sep 2017</time> &ndash; <time datetime="2019-01-29">present</time>
+				</div>
+				<ul>
+					<li>Developed a new web back-end using <span class="tech">PHP</span> and <span class="tech">MySQL</span></li>
+					<li>Maintained web front-end using <span class="tech">HTML</span>, <span class="tech">CSS</span>, <span class="tech">JavaScript</span>, and <span class="tech">jQuery</span></li>
+					<li>Installed administrative web applications using <span class="tech">Python</span> and <span class="tech">web.py</span> on a LAMPy stack</li>
+					<li>Installed and maintained Windows desktop computers on a workgroup network</li>
+					<li>Migrated email to G Suite and wrote maintenance scripts using <span class="tech">Google Apps Script</span></li>
+				</ul>
+				<div class="flex">
+					<p><span class="project">IT Contractor</span></p>
+					<p><span class="org">The Anonymous Press</span>, Malo, WA &amp; Chicago, IL</p>
+					<p><time datetime="2013-04-01">Apr 2013</time> &ndash; <time datetime="2018-11-28">Nov 2018</time>
+				</div>
+				<ul>
+					<li>Analyzed order data to minimize warehousing costs using <span class="tech">Python</span> and <span class="tech">Excel VBA</span></li>
+					<li>Ported web back-end scripts from ASP to <span class="tech">PHP</span> and migrated website to a LAMP stack</li>
+					<li>Developed <span class="tech">PHP</span> scripts to move data between third-party order management APIs</li>
+					<li>Developed a <span class="tech">PHP</span> application to generate sales reports from a <span class="tech">MySQL</span> database</li>
+					<li>Maintained various <span class="tech">PHP</span> and <span class="tech">JavaScript</span> web scripts, including migration to PHP 7</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Projects</h2>
+				<div style="display: grid; grid-template-columns: 70% 15% 15%">
+					<p><span class="project"><a href="https://quantum-trivia-takeover.firebaseapp.com/">Quantum Trivia Takeover</a></span></p>
+					<p><a href="http://qtriv.com">qtriv.com</a></p>
+					<p style="text-align: right;"><time datetime="2019-01-26">Jan 2019</time></p>
+				</div>
+				<p>A trivia and strategy game demonstrating basic quantum computing mechanics, built with a <span class="tech">Angular</span>/<span class="tech">TypeScript</span> front-end interfacing with a <span class="tech">Python</span>-based <span class="tech">REST</span> API running on <span class="tech">Flask</span> using IBM's <span class="tech">Qiskit</span> quantum computing library.</p>
+				<div style="display: grid; grid-template-columns: 70% 15% 15%; margin-top: 1em;">
+					<p><span class="project"><a href="http://superhyperadvancedsearchtoolvii.seangillen.com/">Super Hyper Advanced Search Tool VII</a></span></p>
+					<p><a href="http://shast7.com">shast7.com</a></p>
+					<p style="text-align: right;"><time datetime="2018-12-02">Dec 2018</time></p>
+				</div>
+				<p>A tool to visualize price distribution of eBay listings on a <span class="tech">JavaScript</span> and <span class="tech">CSS</span>-based histogram with a <span class="tech">PHP</span> back-end interfacing with eBay's Finding API.</p>
+				<div style="display: grid; grid-template-columns: 70% 15% 15%; margin-top: 1em;">
+					<p><span class="project"><a href="https://github.com/TortoiseWrath/ram-allocation-utility">RAM Allocation Utility</a></span></p>
+					<p style="font-style: italic;">(obsolete)</p>
+					<p style="text-align: right;"><time datetime="2012-07-04">Jul 2012</time></p>
+				</div>
+				<p>A <span class="tech">VB.NET</span> application to alter the amount of memory allocated to the game Minecraft by its 2012-era Java launcher.</p>
+			</section>
+			<section>
+				<h2>Skills</h2>
+				Programming Languages: <ul class="flex" style="display: inline-flex;">
+					<li style="font-weight: bold;">C++</li>
+					<li style="font-weight: bold;">C</li>
+					<li style="font-weight: bold;">JavaScript</li>
+					<li style="font-weight: bold;">TypeScript</li>
+					<li style="font-weight: bold;">SQL</li>
+					<li>Python</li>
+					<li>PHP</li>
+					<li>Perl</li>
+				</ul>
+				<div style="margin-top: 1em">
+					Tools/Frameworks: <ul class="flex" style="display: inline-flex;">
+						<li style="font-weight: bold;">Angular</li>
+						<li style="font-weight: bold;">Flask</li>
+						<li style="font-weight: bold;">git</li>
+						<li>jQuery</li>
+						<li>Linux/Unix</li>
+						<li>bash</li>
+						<li>Windows Batch</li>
+					</ul>
+				</div>
+			<section>
+		</article>
+	</body>
+</html>
