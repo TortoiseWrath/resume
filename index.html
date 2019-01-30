@@ -93,18 +93,6 @@
 				src: url("segoeuii.ttf") format("truetype");
 			}
 
-			@font-face {
-				font-family: "Leelawadee";
-				font-weight: 400;
-				src: url("LeelawUI.ttf") format("truetype");
-			}
-
-			@font-face {
-				font-family: "Leelawadee";
-				font-weight: 400;
-				src: url("LeelawUI.ttf") format("truetype");
-			}
-
 			body {
 				text-align: center;
 				background-color: whitesmoke;
@@ -123,6 +111,8 @@
 				padding: 0.6in 0.75in;
 				font-size: 12pt;
 				font-family: 'Segoe', 'Segoe UI', sans-serif;
+				line-height: 1.3;
+				page-break-inside: avoid;
 			}
 			aside>a {
 				font-family: 'Segoe', 'Segoe UI', sans-serif;
@@ -147,6 +137,7 @@
 				font-feature-settings: "titl";
 				white-space: nowrap;
 				margin-bottom: 0.2em;
+				margin-top: 0.5em;
 			}
 			h1 {
 				margin: 0;
@@ -262,7 +253,7 @@
 		<aside class="noprint float"><a href="resume.pdf"><img src="PDF_24.png" style="margin-right: 24px;" alt="[PDF]">Printable version</a></aside>
 		<article>
 			<header>
-				<h1 style="font-family: 'Leelawadee', 'Segoe UI', 'Segoe', sans-serif;"><span style="font-weight: 400; margin-right: 0.15em; color: #17365d;">Sean</span>Gillen</h1>
+				<h1 style="font-family: 'Segoe', 'Segoe UI', sans-serif;"><span style="font-weight: 400; margin-right: 0.15em; color: #17365d;">Sean</span>Gillen</h1>
 				<address>
 					<a href="tel:1-509-779-2336">(509)&nbsp;779&ndash;2336</a>
 					<a data-email></a>
@@ -352,7 +343,7 @@
 					<li>PHP</li>
 					<li>Perl</li>
 				</ul>
-				<div style="margin-top: 1em">
+				<div style="margin-top: 0.5em">
 					Tools/Frameworks: <ul class="flex" style="display: inline-flex;">
 						<li style="font-weight: bold;">Angular</li>
 						<li style="font-weight: bold;">Flask</li>
