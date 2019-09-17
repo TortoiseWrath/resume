@@ -138,17 +138,17 @@
 				font-feature-settings: "titl";
 				white-space: nowrap;
 				margin-bottom: 0.2em;
-				margin-top: 0.5em;
 			}
 			h1 {
-				margin: 0;
+				margin: 0.5em 0 0 0;
 				font-size: 28pt;
 			}
 			h2 {
+				margin-top: 0.7em;
 				font-size: 18pt;
 				font-family: 'Linux Libertine O', serif;
 			}
-			.org {
+			.org, h3 {
 				font-weight: 600;
 			}
 			.project {
@@ -181,6 +181,20 @@
 				display: flex;
 				justify-content: space-between;
 			}
+			.triplet {
+				text-align: center;
+				position: relative;
+			}
+			.triplet > *:first-child {
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			.triplet > *:last-child {
+				position: absolute;
+				right: 0;
+				top: 0;
+			}
 			ul.flex {
 				flex-wrap: wrap;
 				list-style-type: none;
@@ -188,7 +202,7 @@
 				margin: 0;
 				justify-content: flex-start;
 			}
-			ul.flex:not(.nocomma)>li:not(:last-of-type):after {
+			ul.flex:not(.nocomma)>li:not(:last-of-type)::after {
 				content: ',';
 			}
 			ul.flex>li {
@@ -214,6 +228,13 @@
 			}
 			.tech, .project, h1, h2, .project a {
 				color: #0f243e;
+			}
+			h3 {
+				font-size: inherit;
+				margin: 0;
+			}
+			h3::after {
+				content: ':';
 			}
 			@media print {
 				.dark-only {
@@ -261,98 +282,117 @@
 					<a href="https://github.com/TortoiseWrath"><img class="light-only" src="GitHub-Mark-32px.png" alt="GitHub: " style="height: 1em;"><img class="dark-only" src="GitHub-Mark-Light-32px.png" alt="GitHub: " style="height: 1em;"> github.com/TortoiseWrath</a>
 				</address>
 			</header>
-			<section>
+			<section class="experience" style="padding-top: 0.5em;">
+				<h2>Professional Experience</h2>
+				<div class="triplet">
+					<p><span class="project">SDE Intern</span></p>
+					<p><span class="org">Amazon</span>, Seattle, WA</p>
+					<p><time datetime="2019-05-28">Summer 2019</time></p>
+				</div>
+				<ul>
+					<li>Designed an internal API using a <span class="tech">JAXB</span>-like schema and specialized RPC framework
+					<li>Implemented a <span class="tech">Spring</span> application to make API calls using serialized objects from a database
+					<li>Defined a complex <span class="tech">JSON</span> schema and implemented recursive logic using <span class="tech">Java 8</span> and <span class="tech">Lombok</span>
+					<li>Wrote unit tests for <span class="tech">Java</span> classes using <span class="tech">JUnit</span>, <span class="tech">Mockito</span>, and <span class="tech">Hamcrest</span>
+					<li>Deployed <span class="tech">Java</span> packages using an <span class="tech">Ant</span>-like build system, <span class="tech">Git</span>, and a proprietary CI/CD system
+				</ul>
+				<div class="triplet">
+					<p><span class="project">IT Contractor</span></p>
+					<p><span class="org">Forget Me Not Animal Shelter</span>, Republic, WA</p>
+					<p><time datetime="2017-09-20">Sep 2017</time> &ndash; <time datetime="2019-09-17">present</time></p>
+				</div>
+				<ul>
+					<li>Automated website updates using <span class="tech">PHP</span> and a <span class="tech">MySQL</span> database
+					<li>Maintained web front-end using <span class="tech">HTML</span>, <span class="tech">CSS</span>, <span class="tech">JavaScript</span>, and <span class="tech">jQuery</span>
+					<li>Migrated administrative Python applications to the web using <span class="tech">web.py</span> on a LAMPy stack
+					<li>Installed and maintained <span class="tech">Windows</span> computers and other devices on a workgroup network
+				</ul>
+				<div class="triplet">
+					<p><span class="project">IT Contractor</span></p>
+					<p><span class="org">The Anonymous Press</span>, Chicago, IL</p>
+					<p><time datetime="2013-04-01">Apr 2013</time> &ndash; <time datetime="2019-09-17">present</time></p>
+				</div>
+				<ul>
+					<li>Wrote <span class="tech">Python</span> and <span class="tech">Excel VBA</span> scripts to analyze sales data and optimize procurement
+					<li>Implemented responsive web homepage using <span class="tech">HTML5</span> and <span class="tech">JavaScript</span>
+					<li>Developed <span class="tech">PHP</span> scripts to automate order fulfillment using third-party APIs
+					<li>Automated sales report generation from a <span class="tech">MySQL</span> database
+				</ul>
+			</section>
+			<section class="education">
 				<h2>Education</h2>
 				<div class="flex">
 					<p><span class="org">The University of Alabama</span>, Tuscaloosa, AL</p>
-					<p style="font-size: small; font-style: italic; align-self: center;">College of Engineering &amp; Honors College</p>
-					<p style="font-size: small; font-style: italic; align-self: center;">GPA: 3.7/4.0</p>
+					<p>College of Engineering &amp; Honors College</p>
 				</div>
 				<div class="flex">
-					<p><span class="project">Bachelor of Science in Computer Science</span></p>
+					<p><span class="project">Master of Science in Computer Science</span>
+					<p><time datetime="2021-05-01">May 2021</time>
+				</div>
+				<div class="flex">
+					<p><span class="project">Bachelor of Science in Computer Science</span>
 					<p>Minor: Mathematics</p>
 					<p><time datetime="2020-05-02">May 2020</time></p>
 				</div>
 				<div class="flex" style="margin-top: 0.5em;">
 					<ul style="margin: 0;">
-						<li>Head of competitive programming club</li>
+						<li>Competitive programming team captain</li>
 					</ul>
-					<p><time datetime="2019-01-17">Jan 2019</time> &ndash; <time datetime="2019-01-29">present</time></p>
+					<p><time datetime="2019-01-17">Spring 2019</time></p>
+				</div>
+				<div class="flex">
+					<ul style="margin: 0;">
+						<li>Active member of Association for Computing Machinery student chapter</li>
+					</ul>
+					<p><time datetime="2017-09-01">2017</time> &ndash; <time datetime="2019-09-17">present</time></p>
 				</div>
 				<ul>
-					<li>Member of Association for Computing Machinery student chapter</li>
 					<li>National Merit Finalist &amp; Presidential Scholarship recipient</li>
 				</ul>
 			</section>
-			<section>
-				<h2>Work Experience</h2>
-				<div class="flex">
-					<p><span class="project">IT Contractor</span></p>
-					<p><span class="org">Forget Me Not Animal Shelter</span>, Republic, WA</p>
-					<p><time datetime="2017-09-20">Sep 2017</time> &ndash; <time datetime="2019-01-29">present</time>
-				</div>
-				<ul>
-					<li>Developed a new web back-end using <span class="tech">PHP</span> and <span class="tech">MySQL</span></li>
-					<li>Maintained web front-end using <span class="tech">HTML</span>, <span class="tech">CSS</span>, <span class="tech">JavaScript</span>, and <span class="tech">jQuery</span></li>
-					<li>Installed administrative web applications using <span class="tech">Python</span> and <span class="tech">web.py</span> on a LAMPy stack</li>
-					<li>Installed and maintained Windows desktop computers on a workgroup network</li>
-					<li>Migrated email to G Suite and wrote maintenance scripts using <span class="tech">Google Apps Script</span></li>
-				</ul>
-				<div class="flex">
-					<p><span class="project">IT Contractor</span></p>
-					<p><span class="org">The Anonymous Press</span>, Malo, WA &amp; Chicago, IL</p>
-					<p><time datetime="2013-04-01">Apr 2013</time> &ndash; <time datetime="2018-11-28">Nov 2018</time>
-				</div>
-				<ul>
-					<li>Analyzed order data to minimize warehousing costs using <span class="tech">Python</span> and <span class="tech">Excel VBA</span></li>
-					<li>Ported web back-end scripts from ASP to <span class="tech">PHP</span> and migrated website to a LAMP stack</li>
-					<li>Developed <span class="tech">PHP</span> scripts to move data between third-party order management APIs</li>
-					<li>Developed a <span class="tech">PHP</span> application to generate sales reports from a <span class="tech">MySQL</span> database</li>
-					<li>Maintained various <span class="tech">PHP</span> and <span class="tech">JavaScript</span> web scripts, including migration to PHP 7</li>
-				</ul>
-			</section>
-			<section>
+			<section class="projects">
 				<h2>Projects</h2>
-				<div style="display: grid; grid-template-columns: 70% 15% 15%">
-					<p><span class="project"><a href="https://quantumtriviatakeover.com/">Quantum Trivia Takeover</a></span></p>
-					<p><a href="http://qtriv.com">qtriv.com</a></p>
-					<p style="text-align: right;"><time datetime="2019-01-26">Jan 2019</time></p>
+				<div style="display: grid; grid-template-columns: 70% 15% 15%; margin-top: -1em;">
+					<p><span class="project"><a href="https://quantumtriviatakeover.com/">Quantum Trivia Takeover</a></span>
+					<p><a href="http://qtriv.com">qtriv.com</a>
+					<p style="text-align: right;"><time datetime="2019-01-26">Jan 2019</time>
 				</div>
-				<p>A trivia and strategy game demonstrating basic quantum computing mechanics, built with a <span class="tech">Angular</span>/<span class="tech">TypeScript</span> front-end interfacing with a <span class="tech">Python</span>-based <span class="tech">REST</span> API running on <span class="tech">Flask</span> using IBM's <span class="tech">Qiskit</span> quantum computing library.</p>
+				<p>A trivia strategy game demonstrating basic quantum computing mechanics, built with an <span class="tech">Angular</span>/<span class="tech">TypeScript</span> front-end and a <span class="tech">REST</span>ful <span class="tech">Python</span>/<span class="tech">Flask</span> backend using <span class="tech">IBM Qiskit</span>.
 				<div style="display: grid; grid-template-columns: 70% 15% 15%; margin-top: 1em;">
-					<p><span class="project"><a href="http://superhyperadvancedsearchtoolvii.seangillen.com/">Super Hyper Advanced Search Tool VII</a></span></p>
-					<p><a href="http://shast7.com">shast7.com</a></p>
-					<p style="text-align: right;"><time datetime="2018-12-02">Dec 2018</time></p>
+					<p><span class="project"><a href="http://superhyperadvancedsearchtoolvii.seangillen.com/">Super Hyper Advanced Search Tool VII</a></span>
+					<p><a href="http://shast7.com">shast7.com</a>
+					<p style="text-align: right;"><time datetime="2018-12-02">Dec 2018</time>
 				</div>
-				<p>A tool to visualize price distribution of eBay listings on a <span class="tech">JavaScript</span> and <span class="tech">CSS</span>-based histogram with a <span class="tech">PHP</span> back-end interfacing with eBay's Finding API.</p>
-				<div style="display: grid; grid-template-columns: 70% 15% 15%; margin-top: 1em;">
-					<p><span class="project"><a href="https://github.com/TortoiseWrath/ram-allocation-utility">RAM Allocation Utility</a></span></p>
-					<p style="font-style: italic;">(obsolete)</p>
-					<p style="text-align: right;"><time datetime="2012-07-04">Jul 2012</time></p>
-				</div>
-				<p>A <span class="tech">VB.NET</span> application to alter the amount of memory allocated to the game Minecraft by its 2012-era Java launcher.</p>
-			</section>
-			<section>
+				<p>A tool to visualize price distribution of eBay listings on a <span class="tech">JavaScript</span> and <span class="tech">CSS</span>-based histogram with a <span class="tech">PHP</span> back-end interfacing with eBay's Finding API.
+				</section>
+			<section class="skills">
 				<h2>Skills</h2>
-				Programming Languages: <ul class="flex" style="display: inline-flex;">
-					<li style="font-weight: bold;">C++</li>
-					<li style="font-weight: bold;">C</li>
-					<li style="font-weight: bold;">JavaScript</li>
-					<li style="font-weight: bold;">TypeScript</li>
-					<li style="font-weight: bold;">SQL</li>
-					<li>Python</li>
-					<li>PHP</li>
-					<li>Perl</li>
-				</ul>
-				<div style="margin-top: 0.5em">
-					Tools/Frameworks: <ul class="flex" style="display: inline-flex;">
-						<li style="font-weight: bold;">Angular</li>
-						<li style="font-weight: bold;">Flask</li>
-						<li style="font-weight: bold;">git</li>
-						<li>jQuery</li>
+				<div class="flex">
+					<h3>Programming Languages</h3>
+					<ul class="flex" style="display: inline-flex;">
+						<li>Java</li>
+						<li>C++</li>
+						<li>C</li>
+						<li>JavaScript</li>
+						<li>TypeScript</li>
+						<li>SQL</li>
+						<li>Python</li>
+						<li>PHP</li>
+						<li>Perl</li>
+					</ul>
+				</div>
+				<div class="flex" style="margin-top: 0.5em">
+					<h3>Tools and Frameworks</h3>
+					<ul class="flex" style="display: inline-flex;">
+						<li>Git</li>
+						<li>Lombok</li>
+						<li>JUnit</li>
 						<li>Linux/Unix</li>
 						<li>bash</li>
-						<li>Windows Batch</li>
+						<li>Angular</li>
+						<li>Flask</li>
+						<li>jQuery</li>
+						<li>Batch</li>
 					</ul>
 				</div>
 			</section>
