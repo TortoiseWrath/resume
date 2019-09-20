@@ -109,7 +109,7 @@
 				background-color: white;
 				border-radius: 1em;
 				margin: 1em;
-				padding: 0.6in 0.75in;
+				padding: 0 0.75in 0.6in; /* top margin is on header to fix printing in Opera */
 				font-size: 12pt;
 				font-family: 'Segoe', 'Segoe UI', sans-serif;
 				line-height: 1.3;
@@ -159,6 +159,7 @@
 			}
 			header {
 				display: grid;
+				margin-top: 0.6in;
 			}
 			header>h1 {
 				grid-area: 1 / 1 / 1 / 1;
@@ -285,7 +286,7 @@
 			<section class="experience" style="padding-top: 0.5em;">
 				<h2>Professional Experience</h2>
 				<div class="triplet">
-					<p><span class="project">SDE Intern</span></p>
+					<p><span class="project">Software Development Intern</span></p>
 					<p><span class="org">Amazon</span>, Seattle, WA</p>
 					<p><time datetime="2019-05-28">Summer 2019</time></p>
 				</div>
@@ -305,7 +306,7 @@
 					<li>Automated website updates using <span class="tech">PHP</span> and a <span class="tech">MySQL</span> database
 					<li>Maintained web front-end using <span class="tech">HTML</span>, <span class="tech">CSS</span>, <span class="tech">JavaScript</span>, and <span class="tech">jQuery</span>
 					<li>Migrated administrative Python applications to the web using <span class="tech">web.py</span> on a LAMPy stack
-					<li>Installed and maintained <span class="tech">Windows</span> computers and other devices on a workgroup network
+					<li>Installed and administered <span class="tech">Windows</span> computers and other devices on a workgroup network
 				</ul>
 				<div class="triplet">
 					<p><span class="project">IT Contractor</span></p>
@@ -381,18 +382,18 @@
 						<li>Perl</li>
 					</ul>
 				</div>
-				<div class="flex" style="margin-top: 0.5em">
+				<div class="flex" style="margin-top: 0.5em; font-size: 95%;">
 					<h3>Tools and Frameworks</h3>
 					<ul class="flex" style="display: inline-flex;">
 						<li>Git</li>
 						<li>Lombok</li>
 						<li>JUnit</li>
-						<li>Linux/Unix</li>
+						<li>Linux</li>
 						<li>bash</li>
 						<li>Angular</li>
 						<li>Flask</li>
 						<li>jQuery</li>
-						<li>Batch</li>
+						<li>Microsoft Office</li>
 					</ul>
 				</div>
 			</section>
