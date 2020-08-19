@@ -73,7 +73,7 @@
 				background-color: white;
 				border-radius: 1em;
 				margin: 1em;
-				padding: 0.6in 0.73in 0.6in;
+				padding: 0.65in 0.73in 0.6in;
 				font-size: 12pt;
 				font-family: 'Segoe UI', 'Roboto', sans-serif;
 				line-height: 1.3;
@@ -150,13 +150,17 @@
 				justify-content: space-between;
 			}
 			.triplet {
-				text-align: center;
+				text-align: left;
 				position: relative;
 			}
 			.triplet > *:first-child {
-				position: absolute;
-				left: 0;
-				top: 0;
+				display: inline;
+			}
+			.triplet > *:first-child::after {
+				content: ', ';
+			}
+			.triplet > *:nth-child(2) {
+				display: inline;
 			}
 			.triplet > *:last-child {
 				position: absolute;
@@ -265,21 +269,29 @@
 			<section class="experience" style="padding-top: 0.5em;">
 				<h2>Professional Experience</h2>
 				<div class="triplet">
-					<p><span class="project">Software Development Intern</span></p>
+					<p><span class="project">Software Engineer Intern</span></p>
+					<p><span class="org">Google</span>, Mountain View, CA (remote)</p>
+					<p><time datetime="2020-05-04">May 2020</time> &ndash; <time datetime="2020-07-24">Jun 2020</time></p>
+				</div>
+				<ul>
+					<li>Contributed to tracing and benchmarking tools for the <span class="tech">Fuchsia</span> operating system
+					<li>Migrated <span class="tech">C++</span> tests to <span class="tech">Dart</span> to simplify Fuchsia testing system
+					<li>Modernized the Fuchsia benchmark specification format and removed legacy code
+				</ul>
+				<div class="triplet">
+					<p><span class="project">Software Development Engineer Intern</span></p>
 					<p><span class="org">Amazon</span>, Seattle, WA</p>
-					<p><time datetime="2019-05-28">Summer 2019</time></p>
+					<p><time datetime="2019-05-28">May 2019</time> &ndash; <time datetime="2019-08-16">Aug 2019</time></p>
 				</div>
 				<ul>
 					<li>Designed an internal API using a <span class="tech">JAXB</span>-like schema and specialized RPC framework
 					<li>Implemented a <span class="tech">Spring</span> application to make API calls using serialized objects from a database
-					<li>Defined a complex <span class="tech">JSON</span> schema and implemented recursive logic using <span class="tech">Java 8</span> and <span class="tech">Lombok</span>
-					<li>Wrote unit tests for <span class="tech">Java</span> classes using <span class="tech">JUnit</span>, <span class="tech">Mockito</span>, and <span class="tech">Hamcrest</span>
-					<li>Deployed <span class="tech">Java</span> packages using an <span class="tech">Ant</span>-like build system, <span class="tech">Git</span>, and a proprietary CI/CD system
+					<li>Defined a <span class="tech">JSON</span> schema and implemented recursive processing logic using <span class="tech">Java 8</span> and <span class="tech">Lombok</span>
 				</ul>
 				<div class="triplet">
 					<p><span class="project">IT Contractor</span></p>
-					<p><span class="org">Forget Me Not Animal Shelter</span>, Republic, WA</p>
-					<p><time datetime="2017-09-20">Sep 2017</time> &ndash; <time datetime="2019-09-17">present</time></p>
+					<p><span class="org">Forget Me Not Animal Shelter</span>, Republic, WA (remote)</p>
+					<p><time datetime="2017-09-20">Sep 2017</time> &ndash; <time datetime="2020-03-01">Mar 2020</time></p>
 				</div>
 				<ul>
 					<li>Automated website updates using <span class="tech">PHP</span> and a <span class="tech">MySQL</span> database
@@ -288,8 +300,8 @@
 				</ul>
 				<div class="triplet">
 					<p><span class="project">IT Contractor</span></p>
-					<p><span class="org">The Anonymous Press</span>, Chicago, IL</p>
-					<p><time datetime="2013-04-01">Apr 2013</time> &ndash; <time datetime="2019-09-17">present</time></p>
+					<p><span class="org">The Anonymous Press</span>, Chicago, IL (remote)</p>
+					<p><time datetime="2013-04-01">Apr 2013</time> &ndash; <time datetime="2019-12-01">Dec 2019</time></p>
 				</div>
 				<ul>
 					<li>Wrote <span class="tech">Python</span> and <span class="tech">Excel VBA</span> scripts to analyze sales data and optimize procurement
@@ -309,7 +321,7 @@
 					<p><time datetime="2021-05-01">May 2021</time>
 				</div>
 				<div class="flex">
-					<p><span class="project">Bachelor of Science in Computer Science</span>
+					<p><span class="project">Bachelor of Science in Computer Science</span>,  <i>cum laude</i>
 					<p>Minor: Mathematics</p>
 					<p><time datetime="2020-05-02">May 2020</time></p>
 				</div>
@@ -323,7 +335,6 @@
 					<ul style="margin: 0;">
 						<li>Active member of Association for Computing Machinery student chapter</li>
 					</ul>
-					<p><time datetime="2017-09-01">2017</time> &ndash; <time datetime="2019-09-17">present</time></p>
 				</div>
 				<ul>
 					<li>National Merit Finalist &amp; Presidential Scholarship recipient</li>
@@ -343,24 +354,18 @@
 					<p style="text-align: right;"><time datetime="2018-12-02">Dec 2018</time>
 				</div>
 				<p>A tool to visualize price distribution of eBay listings on a <span class="tech">JavaScript</span> and <span class="tech">CSS</span>-based histogram with a <span class="tech">PHP</span> back-end interfacing with eBay’s Finding API.
-				<div>
-					<p><span class="project"><a href="http://uadh.xyz/">Bama Dining</a></span>
-					<p><a href="http://uadh.xyz">uadh.xyz</a>
-					<p style="text-align: right;"><time datetime="2019-02-01">Feb 2019</time>
-				</div>
-				<p>A website to quickly access hours for on-campus dining locations at the University of Alabama, built with <span class="tech">PHP</span> and <span class="tech">XPath</span> alongside <span class="tech">crontab</span> to request and cache each day’s hours overnight.
 			</section>
 			<section class="skills">
 				<h2>Skills</h2>
 				<div class="flex">
 					<h3>Programming Languages</h3>
 					<ul class="flex" style="display: inline-flex;">
-						<li>Java</li>
 						<li>C++</li>
 						<li>C</li>
+						<li>Dart</li>
 						<li>JavaScript</li>
 						<li>TypeScript</li>
-						<li>SQL</li>
+						<li>Java</li>
 						<li>Python</li>
 						<li>PHP</li>
 						<li>Perl</li>
@@ -373,11 +378,8 @@
 						<li>Lombok</li>
 						<li>JUnit</li>
 						<li>Linux</li>
-						<li>bash</li>
 						<li>Angular</li>
-						<li>Flask</li>
-						<li>jQuery</li>
-						<li>Microsoft Office</li>
+						<li>SQL</li>
 					</ul>
 				</div>
 			</section>
